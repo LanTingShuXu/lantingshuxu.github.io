@@ -6,18 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://lantingshuxu.github.io">
-  <title>Category: IO | 蓝亭书序</title>
+  <title>SpringBoot跨域支持配置 | 蓝亭书序</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="生来猿份">
-<meta property="og:type" content="website">
-<meta property="og:title" content="蓝亭书序">
-<meta property="og:url" content="https://lantingshuxu.github.io/categories/UNIX/IO/index.html">
+  <meta name="description" content="现在越来越多的开发使用前后端分离开发模式、前后端分离部署方式等，那么前端跨域问题是一个非常常见的问题了。后台代码可以支持跨域，针对SpringBoot来说，可以使用一下两种方式配置来支持，分别是： 方法一：使用@configuration注解直接配置（推荐）示例代码如下： 1234567891011121314151617181920212223242526import org.springfra">
+<meta name="keywords" content="Java,SpringBoot,跨域">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringBoot跨域支持配置">
+<meta property="og:url" content="https://lantingshuxu.github.io/java/springboot/SpringBoot跨域支持配置/index.html">
 <meta property="og:site_name" content="蓝亭书序">
-<meta property="og:description" content="生来猿份">
+<meta property="og:description" content="现在越来越多的开发使用前后端分离开发模式、前后端分离部署方式等，那么前端跨域问题是一个非常常见的问题了。后台代码可以支持跨域，针对SpringBoot来说，可以使用一下两种方式配置来支持，分别是： 方法一：使用@configuration注解直接配置（推荐）示例代码如下： 1234567891011121314151617181920212223242526import org.springfra">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://lantingshuxu.github.io/java/springboot/SpringBoot跨域支持配置/1.png">
+<meta property="og:updated_time" content="2020-01-11T10:15:34.124Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="蓝亭书序">
-<meta name="twitter:description" content="生来猿份">
+<meta name="twitter:title" content="SpringBoot跨域支持配置">
+<meta name="twitter:description" content="现在越来越多的开发使用前后端分离开发模式、前后端分离部署方式等，那么前端跨域问题是一个非常常见的问题了。后台代码可以支持跨域，针对SpringBoot来说，可以使用一下两种方式配置来支持，分别是： 方法一：使用@configuration注解直接配置（推荐）示例代码如下： 1234567891011121314151617181920212223242526import org.springfra">
+<meta name="twitter:image" content="https://lantingshuxu.github.io/java/springboot/SpringBoot跨域支持配置/1.png">
   
     <link rel="alternative" href="/atom.xml" title="蓝亭书序" type="application/atom+xml">
   
@@ -164,79 +168,249 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-java/springboot/SpringBoot跨域支持配置" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/其他/UNIX五种IO模型/" class="archive-article-date">
-  	<time datetime="2019-11-01T07:19:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-01</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/其他/UNIX五种IO模型/">UNIX五种IO模型</a>
+    <h1 class="article-title" itemprop="name">
+      SpringBoot跨域支持配置
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/java/springboot/SpringBoot跨域支持配置/" class="archive-article-date">
+  	<time datetime="2019-01-11T09:58:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>现在越来越多的开发使用前后端分离开发模式、前后端分离部署方式等，那么前端跨域问题是一个非常常见的问题了。<br>后台代码可以支持跨域，针对SpringBoot来说，可以使用一下两种方式配置来支持，分别是：<!--MOREE--></p>
+<h2 id="方法一：使用-configuration注解直接配置（推荐）"><a href="#方法一：使用-configuration注解直接配置（推荐）" class="headerlink" title="方法一：使用@configuration注解直接配置（推荐）"></a>方法一：使用@configuration注解直接配置（推荐）</h2><p>示例代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Bean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.cors.CorsConfiguration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.cors.UrlBasedCorsConfigurationSource;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.filter.CorsFilter;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Springboot跨域支持.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CorsConfig</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> CorsConfiguration <span class="title">buildConfig</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        CorsConfiguration corsConfiguration = <span class="keyword">new</span> CorsConfiguration();</span><br><span class="line">        corsConfiguration.addAllowedOrigin(<span class="string">"*"</span>); <span class="comment">//允许任何域名</span></span><br><span class="line">        corsConfiguration.addAllowedHeader(<span class="string">"*"</span>); <span class="comment">//允许任何头</span></span><br><span class="line">        corsConfiguration.addAllowedMethod(<span class="string">"*"</span>); <span class="comment">//允许任何方法</span></span><br><span class="line">        corsConfiguration.setAllowCredentials(<span class="keyword">true</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> corsConfiguration;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> CorsFilter <span class="title">corsFilter</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        UrlBasedCorsConfigurationSource source = <span class="keyword">new</span> UrlBasedCorsConfigurationSource();</span><br><span class="line">        source.registerCorsConfiguration(<span class="string">"/**"</span>, buildConfig()); <span class="comment">//注册跨域配置</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> CorsFilter(source);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="方法二：使用过滤器，为http头添加跨域支持配置"><a href="#方法二：使用过滤器，为http头添加跨域支持配置" class="headerlink" title="方法二：使用过滤器，为http头添加跨域支持配置"></a>方法二：使用过滤器，为http头添加跨域支持配置</h2><p>示例代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CorsFilter</span> <span class="keyword">implements</span> <span class="title">Filter</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doFilter</span><span class="params">(ServletRequest req, ServletResponse res, FilterChain chain)</span> <span class="keyword">throws</span> IOException, ServletException </span>&#123;</span><br><span class="line">        HttpServletResponse response = (HttpServletResponse) res;</span><br><span class="line">        HttpServletRequest reqs = (HttpServletRequest) req;</span><br><span class="line">        response.setHeader(<span class="string">"Access-Control-Allow-Origin"</span>,reqs.getHeader(<span class="string">"Origin"</span>));</span><br><span class="line">        <span class="comment">// response.setHeader("Access-Control-Allow-Origin","*");</span></span><br><span class="line">        response.setHeader(<span class="string">"Access-Control-Allow-Credentials"</span>, <span class="string">"true"</span>);</span><br><span class="line">        response.setHeader(<span class="string">"Access-Control-Allow-Methods"</span>, <span class="string">"POST, GET, PATCH, DELETE, PUT"</span>);</span><br><span class="line">        response.setHeader(<span class="string">"Access-Control-Max-Age"</span>, <span class="string">"3600"</span>);</span><br><span class="line">        response.setHeader(<span class="string">"Access-Control-Allow-Headers"</span>, <span class="string">"Origin, X-Requested-With, Content-Type, Accept"</span>);</span><br><span class="line">        chain.doFilter(req, res);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(FilterConfig filterConfig)</span> </span>&#123;&#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>另外，如果最终部署的时候是前后台部署在同一台机器，那么跨域问题应该只会出现在开发阶段，如果不想修改后台代码，其实前端开发也可以使用chrome的某个特殊模式来“强制支持”跨域。</p>
+<p>配置只需要针对chrome浏览器。</p>
+<hr>
+<p>如果 Chrome 版本在49之前，设置方法如下：<br>1、在Chrome的快捷图标上点击鼠标右键（如果没快捷方式，可以找到文件路径，发送快捷方式到桌面）</p>
+<p>2、选择“属性”<br>【除了右键选择属性的方式查看之外，还可以按住alt双击图标，直接打开属性面板】</p>
+<p>3、选择快捷方式标签</p>
+<p>4、在“目标”里面，在原chrome路径的基础上加上 –disable-web-security 【注意–之前有空格】</p>
+<p>5、点击“应用”</p>
+<p>6、点击“确定”关闭属性窗口</p>
+<p>7、关闭所有已打开的chrome，重新启动（必须点击该快捷方式打开）</p>
+<p>8、<strong>看到地址栏下面的小黄条你使用的是不受支持的命令标记 –disable-web-security，就成功了</strong></p>
+<p>如果是49以上的版本：<br>步骤和上面的一样，只是第4步的参数稍微不一样。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">--disable-web-security --user-data-dir=C:\chromedata</span><br><span class="line">【注意--之前有空格】</span><br></pre></td></tr></table></figure>
+<p>C:\chromedata 是你本地硬盘的一个目录，你自己最好新建一个，上面的目录路径换成你新建的目录就可以了。<br>属性配置截图如下：</p>
+<div class="image-size-500"><img src="/java/springboot/SpringBoot跨域支持配置/1.png"></div>
+
+
+
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢您对蓝亭的支持！<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">UNIX</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">I/O</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">跨域</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/UNIX//" class="article-tag-list-link color5">UNIX</a>
+        			<a href="/categories/Java//" class="article-tag-list-link color5">Java</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="/categories/UNIX/IO//" class="article-tag-list-link color3">IO</a>
+        			<a href="/categories/Java/SpringBoot//" class="article-tag-list-link color1">SpringBoot</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="https://tool.oschina.net/action/qrcode/generate?output=image/gif&size=4&type=0&data=https://lantingshuxu.github.io/java/springboot/SpringBoot跨域支持配置/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/其他/idea部署/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          IDEA下javaWeb项目部署的问题
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/前端/angular/EventEmitter实现自定义事件/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">【angular】使用EventEmitter实现自定义事件</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
+  
+  
+  <!-- Gitalk 评论 start  -->
+<!-- Link Gitalk 的支持文件  -->
+<link rel="stylesheet" href="/gitalk.css" />
+<script src="/gitalk.min.js"></script> 
+<div id="gitalk-container"></div>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+    // gitalk的主要参数
+        clientID: 'eaf2419cc6303aca12a7',
+        clientSecret: '7b858d076352798d868f2d1c5433b42e10608f5c',
+        repo: 'lantingshuxu.github.io',
+        owner: 'LanTingShuXu',
+        admin: ['LanTingShuXu'],
+        id: "java/springboot/SpringBoot跨域支持配置/index.html" // 这是仓库的id，这里使用的是文章的url作为id，也可以是path
+    });
+    gitalk.render('gitalk-container');
+</script> 
+<!-- Gitalk end -->
+  
+  
+  
 
 
           </div>
@@ -259,10 +433,10 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: false,
 		root: "/",
