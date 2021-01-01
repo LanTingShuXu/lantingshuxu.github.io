@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="https://lantingshuxu.github.io">
   <title>SpringBoot跨域支持配置 | 蓝亭书序</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="现在越来越多的开发使用前后端分离开发模式、前后端分离部署方式等，那么前端跨域问题是一个非常常见的问题了。后台代码可以支持跨域，针对SpringBoot来说，可以使用一下两种方式配置来支持，分别是： 方法一：使用@configuration注解直接配置（推荐）示例代码如下： 1234567891011121314151617181920212223242526import org.springfra">
+  <meta name="description" content="现在越来越多的开发使用前后端分离开发模式、前后端分离部署方式等，那么前端跨域问题是一个非常常见的问题了。后台代码可以支持跨域，针对SpringBoot来说，可以使用一下两种方式配置来支持，分别是：">
 <meta name="keywords" content="Java,SpringBoot,跨域">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringBoot跨域支持配置">
 <meta property="og:url" content="https://lantingshuxu.github.io/java/springboot/SpringBoot跨域支持配置/index.html">
 <meta property="og:site_name" content="蓝亭书序">
-<meta property="og:description" content="现在越来越多的开发使用前后端分离开发模式、前后端分离部署方式等，那么前端跨域问题是一个非常常见的问题了。后台代码可以支持跨域，针对SpringBoot来说，可以使用一下两种方式配置来支持，分别是： 方法一：使用@configuration注解直接配置（推荐）示例代码如下： 1234567891011121314151617181920212223242526import org.springfra">
+<meta property="og:description" content="现在越来越多的开发使用前后端分离开发模式、前后端分离部署方式等，那么前端跨域问题是一个非常常见的问题了。后台代码可以支持跨域，针对SpringBoot来说，可以使用一下两种方式配置来支持，分别是：">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://lantingshuxu.github.io/java/springboot/SpringBoot跨域支持配置/1.png">
-<meta property="og:updated_time" content="2020-01-11T10:15:34.124Z">
+<meta property="og:updated_time" content="2021-01-01T03:47:34.042Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBoot跨域支持配置">
-<meta name="twitter:description" content="现在越来越多的开发使用前后端分离开发模式、前后端分离部署方式等，那么前端跨域问题是一个非常常见的问题了。后台代码可以支持跨域，针对SpringBoot来说，可以使用一下两种方式配置来支持，分别是： 方法一：使用@configuration注解直接配置（推荐）示例代码如下： 1234567891011121314151617181920212223242526import org.springfra">
+<meta name="twitter:description" content="现在越来越多的开发使用前后端分离开发模式、前后端分离部署方式等，那么前端跨域问题是一个非常常见的问题了。后台代码可以支持跨域，针对SpringBoot来说，可以使用一下两种方式配置来支持，分别是：">
 <meta name="twitter:image" content="https://lantingshuxu.github.io/java/springboot/SpringBoot跨域支持配置/1.png">
   
     <link rel="alternative" href="/atom.xml" title="蓝亭书序" type="application/atom+xml">
@@ -188,7 +188,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>现在越来越多的开发使用前后端分离开发模式、前后端分离部署方式等，那么前端跨域问题是一个非常常见的问题了。<br>后台代码可以支持跨域，针对SpringBoot来说，可以使用一下两种方式配置来支持，分别是：<!--MOREE--></p>
+        <p>现在越来越多的开发使用前后端分离开发模式、前后端分离部署方式等，那么前端跨域问题是一个非常常见的问题了。<br>后台代码可以支持跨域，针对SpringBoot来说，可以使用一下两种方式配置来支持，分别是：<a id="more"></a></p>
 <h2 id="方法一：使用-configuration注解直接配置（推荐）"><a href="#方法一：使用-configuration注解直接配置（推荐）" class="headerlink" title="方法一：使用@configuration注解直接配置（推荐）"></a>方法一：使用@configuration注解直接配置（推荐）</h2><p>示例代码如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Bean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.cors.CorsConfiguration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.cors.UrlBasedCorsConfigurationSource;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.filter.CorsFilter;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Springboot跨域支持.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CorsConfig</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> CorsConfiguration <span class="title">buildConfig</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        CorsConfiguration corsConfiguration = <span class="keyword">new</span> CorsConfiguration();</span><br><span class="line">        corsConfiguration.addAllowedOrigin(<span class="string">"*"</span>); <span class="comment">//允许任何域名</span></span><br><span class="line">        corsConfiguration.addAllowedHeader(<span class="string">"*"</span>); <span class="comment">//允许任何头</span></span><br><span class="line">        corsConfiguration.addAllowedMethod(<span class="string">"*"</span>); <span class="comment">//允许任何方法</span></span><br><span class="line">        corsConfiguration.setAllowCredentials(<span class="keyword">true</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> corsConfiguration;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> CorsFilter <span class="title">corsFilter</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        UrlBasedCorsConfigurationSource source = <span class="keyword">new</span> UrlBasedCorsConfigurationSource();</span><br><span class="line">        source.registerCorsConfiguration(<span class="string">"/**"</span>, buildConfig()); <span class="comment">//注册跨域配置</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> CorsFilter(source);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="方法二：使用过滤器，为http头添加跨域支持配置"><a href="#方法二：使用过滤器，为http头添加跨域支持配置" class="headerlink" title="方法二：使用过滤器，为http头添加跨域支持配置"></a>方法二：使用过滤器，为http头添加跨域支持配置</h2><p>示例代码如下：</p>
@@ -420,7 +420,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2020 蓝亭书序
+    		&copy; 2021 蓝亭书序
     	</div>
       	<div class="footer-right">
       		  ~已经到底了，不要再翻了~  本博客使用<a href="http://hexo.io/" target="_blank">Hexo</a>构建而成
@@ -507,7 +507,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">POI</a>
+                <a href="javascript:void(0)" class="js-tag color5">JDBC</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -515,19 +515,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JDBC</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">图形图像处理</a>
+                <a href="javascript:void(0)" class="js-tag color2">springCloud</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">crontab</a>
+                <a href="javascript:void(0)" class="js-tag color4">POI</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -535,11 +531,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+                <a href="javascript:void(0)" class="js-tag color3">序列</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">序列</a>
+                <a href="javascript:void(0)" class="js-tag color2">图形图像处理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">内建函数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">gitalk</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -551,6 +559,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">crontab</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">UNIX</a>
               </li>
              
@@ -559,23 +579,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">内建函数</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">gitalk</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -591,11 +595,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HIVE</a>
+                <a href="javascript:void(0)" class="js-tag color5">MapReduce</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">MapReduce</a>
+                <a href="javascript:void(0)" class="js-tag color5">HIVE</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -623,6 +627,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">跨域</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Mybatis</a>
               </li>
              
@@ -639,7 +647,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">跨域</a>
+                <a href="javascript:void(0)" class="js-tag color3">管道</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -651,19 +659,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">管道</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Shell</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+                <a href="javascript:void(0)" class="js-tag color2">Github</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Github</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
